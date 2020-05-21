@@ -24,8 +24,8 @@ int main(int argc, char **argv)
 
 void find_HSign(ros::Publisher target_pub, targetDetection_topic::TargetPosition msg)
 {
-	VideoCapture cap(0);  // Change this to "1" when using Drone Camera
-	Mat templ = imread("book.jpg", IMREAD_GRAYSCALE); // Change image to Landing Targer "H.jpg"
+        VideoCapture cap(1);
+	Mat templ = imread("book.jpg", IMREAD_GRAYSCALE);
 
 	if (!cap.isOpened() || templ.empty()) {
 		cerr << "Camera or Template image open failed" << endl;
@@ -99,12 +99,12 @@ void find_HSign(ros::Publisher target_pub, targetDetection_topic::TargetPosition
 			sumY += pt.y;
 		}
 
-		int X_coord = cvRound(sumX / 4.0); // Change here to adjust Control Algorithm
-		int Y_coord = cvRound(sumY / 4.0); // Here as well
-		cout << "X_coord: " <<  X_coord<< endl; //You can delete here later
+		int X_coord = cvRound(sumX / 4.0);
+		int Y_coord = cvRound(sumY / 4.0);
+		cout << "X_coord: " <<  X_coord<< endl;
 		cout << "Y_coord: " << Y_coord << endl << endl;
 
-		msg.x_coord = X_coord; 
+		msg.x_coord = X_coord;
 		msg.y_coord = Y_coord;
 
 		ROS_INFO("send msg = %d", msg.x_coord);

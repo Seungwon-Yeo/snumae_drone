@@ -1,54 +1,45 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(targetDetection_topic)
+project(GPS_topic)
 
-## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+#SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lgps")
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   message_generation
-  std_msgs
   roscpp
+  std_msgs
 )
 
-find_package(OpenCV REQUIRED)
-
-## Generate messages in the 'msg' folder
-add_message_files(
+ add_message_files(
    FILES
-   TargetPosition.msg
-)
+   Target_GPS.msg
+ )
 
 
-## Generate added messages and services with any dependencies listed here
-generate_messages(
+ generate_messages(
    DEPENDENCIES
    std_msgs
  )
 
+
 catkin_package(
-  LIBRARIES targetDetection_topic
-  CATKIN_DEPENDS std_msgs roscpp
+  LIBRARIES GPS_topic
+  #LIBRARIES libgps-dev
+  CATKIN_DEPENDS roscpp std_msgs
 )
 
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  ${OpenCV_INCLUDE_DIRS}
 )
 
+add_executable(GPS_publisher src/GPS_publisher.cpp)
 
- add_executable(target_publisher src/target_publisher.cpp)
+add_dependencies(GPS_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
- add_dependencies(target_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
- target_link_libraries(target_publisher
+target_link_libraries(GPS_publisher
    ${catkin_LIBRARIES}
-   ${OpenCV_LIBS}
+   /usr/lib/x86_64-linux-gnu/libgps.so
  )
-
 
 #############
 ## Install ##
@@ -97,7 +88,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_targetDetection_topic.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_GPS_topic.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

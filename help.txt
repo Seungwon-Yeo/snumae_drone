@@ -1,0 +1,93 @@
+/dev ls --> usb info check
+
+roslaunch mavros px4.launch fcu_url:=/dev/ttyUSB0 of ACM0:57600
+rostopic list
+
+/opt/ros/melodic/share/mavros/launch$ code -r apm_config.yaml 
+changed timesync_rate: 10 to 0
+
+/mavros/altitude
+/mavros/battery
+/mavros/global_position/global_position
+/mavros/global_position/home
+
+/mavros/home_position/home
+/mavros/home_position/set
+
+/mavros/imu/data
+    frame_id: "base_link"
+    orientation: xyzw
+    angular_velocity: xyz
+
+
+/mavros/local_position/pose
+/mavros/mission/reached
+/mavros/mission/waypoints
+
+/mavros/setpoint_attitude/cmd_vel
+/mavros/setpoint_velocity/cmd_vel
+
+
+*****mavros service*****
+
+/mavros/cmd/arming command land  set_home  takeoff  trigger_control
+/mavros/mission/pull push set
+
+
+
+
+
+
+
+sudo apt-get instal nmtui
+
+
+rosmsg show mavros_msgs/PositionTarget
+
+
+ifconfig | grep 192
+raspberry pi 12345
+vnc connection
+
+wifi connection & 
+
+
+setpoint_attitude 
+local_position/pose
+local_position/odon
+
+setpoint_raw/global_position
+mavros_msgs/GlobalPositionTarget
+
+mavros_msgs/PositionTarget
+-> PositionTarget
+-> frame_body ned
+
+/mavros/setpoint_raw/global
+
+coordinate_frame: 5
+
+type_mask: 
+
+rostime
+
+
+QGC
+MAV_
+MAV_0_CONFIG TELEM1 mode selection
+MAV_0_MODE default: Normal --> Minimal
+
+QGC
+log 
+mavlink
+
+local_position_ned
+--> mavros/local_position/pose
+--> x, y, z 
+
+TM : RTT too high for timesync: 120.01 ms.
+
+
+
+
+

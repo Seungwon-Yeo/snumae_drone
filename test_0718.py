@@ -18,8 +18,9 @@ class fcuModes:
     def setTakeoff(self):
     	rospy.wait_for_service('mavros/cmd/takeoff')
     	try:
-    		takeoffService = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL)
-    		takeoffService(altitude = 3)
+    	    takeoffService = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL)
+    	    takeoffService(latitude = 37.4540453, longitude = 126.9518537, altitude = 2)
+            print('TakeOff Succeeded')
     	except rospy.ServiceException, e:
     		print "Service takeoff call failed: %s"%e
 
@@ -28,6 +29,7 @@ class fcuModes:
         try:
             armService = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
             armService(True)
+            print('Arming Succeeded')
         except rospy.ServiceException, e:
             print "Service arming call failed: %s"%e
 
@@ -36,6 +38,7 @@ class fcuModes:
         try:
             armService = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
             armService(False)
+            print('Disarming Succeeded')
         except rospy.ServiceException, e:
             print "Service disarming call failed: %s"%e
 
@@ -44,14 +47,25 @@ class fcuModes:
         try:
             flightModeService = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
             flightModeService(custom_mode='OFFBOARD')
+            print('Changed to OffboardMode')
         except rospy.ServiceException, e:
             print "service set_mode call failed: %s. Offboard Mode could not be set."%e
+
+    def setStabilizedMode(self):
+        rospy.wait_for_service('mavros/set_mode')
+        try:
+            flightModeService = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
+            flightModeService(custom_mode='STABILIZED')
+            print('Changed to StabilizedMode')
+        except rospy.ServiceException, e:
+            print "service set_mode call failed: %s. Stabilized Mode could not be set."%e
 
     def setAutoLandMode(self):
         rospy.wait_for_service('mavros/set_mode')
         try:
             flightModeService = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
             flightModeService(custom_mode='AUTO.LAND')
+            print('Auto Landing..')
         except rospy.ServiceException, e:
                print "service set_mode call failed: %s. Autoland Mode could not be set."%e
 
@@ -69,7 +83,7 @@ class Controller:
 
         # We will fly at a fixed altitude for now
         # Altitude setpoint, [meters]
-        self.ALT_SP = 3.0
+        self.ALT_SP = 2.0
         # update the setpoint message with the required altitude
         self.sp.position.z = self.ALT_SP
         # Step size for position update
@@ -125,7 +139,7 @@ class Controller:
         self.sp_glob.altitude = self.global_pos.z
 
     def x_dir(self):
-    	self.sp.position.x = self.local_pos.x + 5
+    	self.sp.position.x = self.local_pos.x + 1
     	self.sp.position.y = self.local_pos.y
 
     def y_dir(self):
@@ -133,8 +147,9 @@ class Controller:
     	self.sp.position.y = self.local_pos.y + 5
 
     def setGPSPosition(self):
-        self.sp_glob.latitude = 0.00001
-        self.sp_glob.longitude = 0.00001
+        self.sp_glob.latitude = 37.4540227
+        self.sp_glob.longitude = 126.9517741
+        # self.sp_glob.altitude = 159.9
 
 
 # Main function
@@ -180,25 +195,35 @@ def main():
         rate.sleep()
         k = k + 1
 
+
+
+# ROS main loop
+    # cnt.updateSp()
+    # # x_dir()
+    # rospy.sleep(1)
+
+    # sp_pub.publish(cnt.sp)
+    # rate.sleep(5)
+
     # activate OFFBOARD mode
     modes.setOffboardMode()
 
-    # ROS main loop
-    while not rospy.is_shutdown():
-    	cnt.updateSp()
-        x_dir()
-        rospy.sleep(1)
+    # TakeOff
+    modes.setTakeoff()
+    rospy.sleep(3)
 
-    	sp_pub.publish(cnt.sp)
-    	rate.sleep(5)
+    # modes.setStabilizedMode()
+    # rospy.sleep(2)
 
-        modes.setAutoLandMode()
-        modes.setDisarm()
+    cnt.updateSp_glob()
+    cnt.setGPSPosition()
+    
+    rospy.sleep(1)
+    sp_glob_pub.publish(cnt.sp_glob) # Hope
+    rospy.sleep(3)
 
-
-        # cnt.updateSp_glob()
-        # setGPSPosition()
-        # sp_glob_pub.publish(cnt.sp_glob)
+    modes.setAutoLandMode()
+    modes.setDisarm()
 
 
 if __name__ == '__main__':

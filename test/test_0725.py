@@ -8,9 +8,17 @@ from geometry_msgs.msg import Point, PoseStamped
 from mavros_msgs.msg import *
 from mavros_msgs.srv import *
 from sensor_msgs.msg import NavSatFix
+from targetDetection_topic.msg import TargetPosition
 
 # Flight modes class
 # Flight modes are activated using ROS services
+
+def camera_callback(self, msg):
+    x_coord = msg.x_coord
+    y_coord = msg.y_coord
+    print(x_coord, y_coord)
+
+rospy.Subscriber('/target_msg', TargetPosition, camera_callback)
 
 class Controller:
     # initialization method

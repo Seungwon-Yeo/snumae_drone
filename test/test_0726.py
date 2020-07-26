@@ -31,10 +31,10 @@ class Controller:
         # Instantiate a "mavros/setpoint_raw/global" message
         self.sp_glob = GlobalPositionTarget()
         self.sp_glob.type_mask = int('010111111000', 2)
-        self.sp_glob.coordinate_frame = 5 #FRAME_GLOBAL_INT
+        self.sp_glob.coordinate_frame = 6 #FRAME_GLOBAL_INT
         self.sp_glob.latitude = 0
         self.sp_glob.longitude = 0
-        self.sp_glob.altitude = 2
+        self.sp_glob.altitude = 0
 
         # Instantiate a Target_GPS message
         self.target_gps = Target_GPS()
@@ -54,15 +54,19 @@ class Controller:
         self.local_pos.x = msg.pose.position.x  # PoseStamped(msg).Pose(pose).Point(position).x
         self.local_pos.y = msg.pose.position.y
         self.local_pos.z = msg.pose.position.z
+        print('posCb called')
 
     def posCb_glob(self, msg_glob):    #rospy.Subscriber('mavros/global_position/global', NavSatFix, cnt.posCb_glob)
         self.global_pos.x = msg_glob.latitude   # NavSatFix(msg_glob).latitude -> global_pos.x = latitude
         self.global_pos.y = msg_glob.longitude
         self.global_pos.z = msg_glob.altitude
+        print('posCb_glob called')
 
-    def GPS_callback(msg):
+    def GPS_callback(self, msg):
         self.target_gps.latitude = msg.latitude
         self.target_gps.longitude = msg.longitude
+        print('GPS_callback called')
+        print(self.target_gps)
 
     ## Update setpoint message
     def updateSp(self):
@@ -72,6 +76,8 @@ class Controller:
     def updateSp_glob(self):
         self.sp_glob.latitude = self.target_gps.latitude
         self.sp_glob.longitude = self.target_gps.longitude
+        self.sp_glob.altitude = 0
+        print('updateSp_glob called')
 
     def x_dir(self):
     	self.sp.position.x = self.local_pos.x + 1
@@ -143,57 +149,65 @@ def main():
     # flight mode object
     modes = fcuModes()
 
+    # ROS loop rate
+    rate = rospy.Rate(20.0)
+
     # Subscribe to drone's local position
     rospy.Subscriber('mavros/local_position/pose', PoseStamped, cnt.posCb) # cnt.local_pos = Drone's local_position
+    rospy.sleep(0.2)
     rospy.Subscriber('mavros/global_position/global', NavSatFix, cnt.posCb_glob) # cnt.global_pos = Drone's GPS position(lat, long, alt)
-
+    rospy.sleep(0.2)
+    rospy.Subscriber('/Target_GPS_msg', Target_GPS, cnt.GPS_callback)
+    rospy.sleep(0.2)
     # Setpoint publisher    
     sp_pub = rospy.Publisher('mavros/setpoint_raw/local', PositionTarget, queue_size=1)
+    rospy.sleep(0.2)
     sp_glob_pub = rospy.Publisher('mavros/setpoint_raw/global', GlobalPositionTarget, queue_size=1)
+    rospy.sleep(0.2)
 
     ##########################################
     #### Now the Drone starts operation!! ####
     ##########################################
 
-    # Arm the drone
+    # # Arm the drone
     modes.setArm()
-    rospy.sleep(2)
+    rospy.sleep(1)
 
-    # We need to send few setpoint messages, then activate OFFBOARD mode, to take effect
+    # # We need to send few setpoint messages, then activate OFFBOARD mode, to take effect
     k=0
     while k<10:
         sp_pub.publish(cnt.sp)
         rate.sleep()
         k = k + 1
 
-    # activate OFFBOARD mode
+    # # activate OFFBOARD mode
     modes.setOffboardMode()
 
-    # TakeOff
+    # # TakeOff
     modes.setTakeoff(cnt.global_pos)
     rospy.sleep(3)
 
-    rospy.Subscriber('/Target_GPS_msg', Target_GPS, cnt.GPS_callback)
-
     # Update sp_glob to Target's GPS
     cnt.updateSp_glob()
+    print(cnt.sp_glob)
     rospy.sleep(1)
 
-    # Update sp to Target's local position
-    # cnt.updateSp()
-    # rospy.sleep(1)
+    # # Update sp to Target's local position
+    # # cnt.updateSp()
+    # # rospy.sleep(1)
 
-    # Move the drone to Target's GPS position
-    sp_glob_pub.publish(cnt.sp_glob)
-    rospy.sleep(3)
+    # # Move the drone to Target's GPS position
+    # sp_glob_pub.publish(cnt.sp_glob)
+    modes.setTakeoff(cnt.sp_glob)
+    rospy.sleep(5)
 
-    # Move the drone to Target's local position by Camera info
-    # sp_glob_pub.publish(cnt.sp)
-    # rospy.sleep(3)
+    # # Move the drone to Target's local position by Camera info
+    # # sp_pub.publish(cnt.sp)
+    # # rospy.sleep(3)
 
     # Land the drone
     modes.setAutoLandMode()
-    rospy.sleep(5)
+    rospy.sleep(3)
 
     # Disarm the drone
     modes.setDisarm()

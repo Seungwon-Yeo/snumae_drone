@@ -1,0 +1,1016 @@
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+^Chojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Arming Succeeded
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Changed to OffboardMode
+GPS_callback called
+latitude: 37.4541320801
+longitude: 126.95186615
+posCb_glob called
+TakeOff Succeeded
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+^CupdateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 5
+type_mask: 1528
+latitude: 37.4541320801
+longitude: 126.95186615
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb called
+Arming Succeeded
+posCb called
+Changed to OffboardMode
+TakeOff Succeeded
+GPS_callback called
+latitude: 37.4540901184
+longitude: 126.951858521
+posCb called
+posCb called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 5
+type_mask: 1528
+latitude: 37.4540901184
+longitude: 126.951858521
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+GPS_callback called
+latitude: 37.4540901184
+longitude: 126.951858521
+posCb called
+posCb called
+GPS_callback called
+latitude: 37.4540939331
+longitude: 126.95186615
+posCb called
+^Chojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb called
+Arming Succeeded
+posCb called
+GPS_callback called
+latitude: 37.4540977478
+longitude: 126.951858521
+Changed to OffboardMode
+TakeOff Succeeded
+posCb called
+GPS_callback called
+latitude: 37.4540977478
+longitude: 126.951858521
+posCb called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 5
+type_mask: 1528
+latitude: 37.4540977478
+longitude: 126.951858521
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+posCb called
+GPS_callback called
+latitude: 37.4540977478
+longitude: 126.951858521
+posCb called
+posCb called
+GPS_callback called
+latitude: 37.4541015625
+longitude: 126.95186615
+posCb called
+Auto Landing..
+posCb called
+GPS_callback called
+latitude: 37.4541015625
+longitude: 126.95186615
+posCb called
+Disarming Succeeded
+posCb called
+GPS_callback called
+latitude: 37.4541015625
+longitude: 126.95186615
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb called
+Arming Succeeded
+GPS_callback called
+latitude: 37.4541168213
+longitude: 126.95186615
+posCb called
+Changed to OffboardMode
+TakeOff Succeeded
+posCb called
+GPS_callback called
+latitude: 37.4541168213
+longitude: 126.95186615
+posCb called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 5
+type_mask: 1528
+latitude: 37.4541168213
+longitude: 126.95186615
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+posCb called
+^Chojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+GPS_callback called
+latitude: 37.4540863037
+longitude: 126.951843262
+GPS_callback called
+latitude: 37.4540863037
+longitude: 126.951843262
+GPS_callback called
+latitude: 37.4540863037
+longitude: 126.951843262
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951843262
+^Chojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+Arming Succeeded
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+Changed to OffboardMode
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951843262
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951843262
+TakeOff Succeeded
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951843262
+posCb_glob called
+posCb_glob called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 5
+type_mask: 1528
+latitude: 37.454082489
+longitude: 126.951843262
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951843262
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951843262
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Auto Landing..
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951843262
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Disarming Succeeded
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951843262
+posCb_glob called
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Arming Succeeded
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Changed to OffboardMode
+posCb_glob called
+TakeOff Succeeded
+posCb_glob called
+GPS_callback called
+latitude: 37.4540786743
+longitude: 126.951850891
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 5
+type_mask: 1528
+latitude: 37.4540786743
+longitude: 126.951850891
+altitude: 1
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+posCb_glob called
+GPS_callback called
+latitude: 37.4540786743
+longitude: 126.951850891
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540748596
+longitude: 126.951850891
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+Auto Landing..
+posCb_glob called
+GPS_callback called
+latitude: 37.4540748596
+longitude: 126.951850891
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+Disarming Succeeded
+GPS_callback called
+latitude: 37.4540748596
+longitude: 126.951850891
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb called
+Arming Succeeded
+posCb called
+Changed to OffboardMode
+TakeOff Succeeded
+GPS_callback called
+latitude: 37.4540748596
+longitude: 126.951858521
+posCb called
+posCb called
+Auto Landing..
+GPS_callback called
+latitude: 37.4540672302
+longitude: 126.951858521
+posCb called
+posCb called
+GPS_callback called
+latitude: 37.4540672302
+longitude: 126.951858521
+Disarming Succeeded
+posCb called
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb called
+posCb_glob called
+posCb_glob called
+Arming Succeeded
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Changed to OffboardMode
+x: 37.4540209
+y: 126.9518362
+z: 171.525806461
+posCb_glob called
+GPS_callback called
+latitude: 37.4540290833
+longitude: 126.951843262
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+^CposCb called
+posCb_glob called
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ^C
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Arming Succeeded
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Changed to OffboardMode
+TakeOff Succeeded
+posCb_glob called
+GPS_callback called
+latitude: 37.4540481567
+longitude: 126.951850891
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540481567
+longitude: 126.951850891
+posCb_glob called
+Auto Landing..
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540481567
+longitude: 126.951850891
+Disarming Succeeded
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Arming Succeeded
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540634155
+longitude: 126.951858521
+posCb_glob called
+posCb_glob called
+Changed to OffboardMode
+TakeOff Succeeded
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540634155
+longitude: 126.951858521
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Auto Landing..
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540634155
+longitude: 126.95186615
+posCb called
+posCb_glob called
+posCb_glob called
+Disarming Succeeded
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Arming Succeeded
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Changed to OffboardMode
+posCb_glob called
+TakeOff Succeeded
+GPS_callback called
+latitude: 37.4540863037
+longitude: 126.951881409
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 5
+type_mask: 1528
+latitude: 37.4540863037
+longitude: 126.951881409
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+GPS_callback called
+latitude: 37.4540863037
+longitude: 126.951881409
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540863037
+longitude: 126.951881409
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Auto Landing..
+GPS_callback called
+latitude: 37.4540863037
+longitude: 126.951881409
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Disarming Succeeded
+GPS_callback called
+latitude: 37.4540863037
+longitude: 126.951881409
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb_glob called
+posCb called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540863037
+longitude: 126.951889038
+posCb_glob called
+Arming Succeeded
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+Changed to OffboardMode
+posCb_glob called
+TakeOff Succeeded
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951881409
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 6
+type_mask: 1528
+latitude: 37.454082489
+longitude: 126.951881409
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+^XposCb_glob called
+^C^Chojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb_glob called
+GPS_callback called
+latitude: 37.4540786743
+longitude: 126.951889038
+posCb_glob called
+posCb_glob called
+Arming Succeeded
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Changed to OffboardMode
+TakeOff Succeeded
+posCb_glob called
+posCb called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540786743
+longitude: 126.951889038
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 6
+type_mask: 1528
+latitude: 37.4540786743
+longitude: 126.951889038
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+posCb_glob called
+posCb_glob called
+posCb called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951889038
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951889038
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Auto Landing..
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951889038
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Disarming Succeeded
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951896667
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Arming Succeeded
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951896667
+posCb_glob called
+posCb_glob called
+Changed to OffboardMode
+posCb_glob called
+TakeOff Succeeded
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951896667
+posCb_glob called
+posCb_glob called
+posCb_glob called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 11
+type_mask: 1528
+latitude: 37.454082489
+longitude: 126.951896667
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.454082489
+longitude: 126.951896667
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540901184
+longitude: 126.951911926
+posCb called
+posCb_glob called
+posCb_glob called
+Auto Landing..
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540901184
+longitude: 126.951911926
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+Disarming Succeeded
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540901184
+longitude: 126.951911926
+hojaelee@hojaelee-900X5N:~/snumae_drone$ ./test_0726.py 
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Arming Succeeded
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+GPS_callback called
+latitude: 37.4540748596
+longitude: 126.951919556
+posCb_glob called
+Changed to OffboardMode
+posCb_glob called
+TakeOff Succeeded
+posCb_glob called
+posCb_glob called
+posCb called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb_glob called
+posCb called
+GPS_callback called
+latitude: 37.4540748596
+longitude: 126.951919556
+posCb_glob called
+posCb_glob called
+updateSp_glob called
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: ''
+coordinate_frame: 6
+type_mask: 1528
+latitude: 37.4540748596
+longitude: 126.951919556
+altitude: 0
+velocity: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+acceleration_or_force: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+yaw: 0.0
+yaw_rate: 0.0
+posCb_glob called
+posCb_glob called
+posCb_glob called
+Traceback (most recent call last):
+  File "./test_0726.py", line 219, in <module>
+    main()
+  File "./test_0726.py", line 201, in main
+    modes.setTakeoff(cnt.sp_glob)
+  File "./test_0726.py", line 117, in setTakeoff
+    takeoffService(latitude = global_pos.x , longitude = global_pos.y, altitude = 1)
+AttributeError: 'GlobalPositionTarget' object has no attribute 'x'

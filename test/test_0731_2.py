@@ -134,7 +134,7 @@ class fcuModes:
             wpPushService(start_index = 0, waypoints = wps) #start_index = the index at which we want the mission to start
             print "Waypoint Pushed"
         except rospy.ServiceException, e:
-            print "Service takeoff call failed: %s"%e
+            print "Service takeoff call failed: %s" % e
 
     def setAutoLandMode(self):
         rospy.wait_for_service('mavros/set_mode')
@@ -189,6 +189,7 @@ def main():
 
     # Waypoint object 
     wayp0 = wpMissionCnt()
+    wayp1 = wpMissionCnt()
     wps = [] #List to store waypoints
 
     # Subscribe to drone's local position
@@ -205,8 +206,12 @@ def main():
     rospy.sleep(0.2)
 
     # Set Waypoint
-    w = wayp0.setWaypoints(3,16,False,True,0.0,0.0,0.0,float('nan'), cnt.target_gps.latitude, cnt.target_gps.longitude, 1)
+    w = wayp0.setWaypoints(3,84,True,True,0.0,0.0,0.0,float('nan'), cnt.global_pos.x, cnt.global_pos.y , 1)
     wps.append(w)
+
+    w = wayp1.setWaypoints(3,16,False,True,0.0,0.0,0.0,float('nan'), cnt.target_gps.latitude, cnt.target_gps.longitude, 1)
+    wps.append(w)
+
     modes.wpPush(wps)
     print(wps)
 
@@ -225,12 +230,12 @@ def main():
         rate.sleep()
         k = k + 1
 
-    # # activate OFFBOARD mode
-    modes.setOffboardMode()
+    # # # activate OFFBOARD mode
+    # modes.setOffboardMode()
 
-    # # TakeOff
-    modes.setTakeoff(cnt.global_pos)
-    rospy.sleep(3)
+    # # # TakeOff
+    # modes.setTakeoff(cnt.global_pos)
+    # rospy.sleep(3)
 
     ## activate AUTO.MISSION mode
     modes.setAutoMissionMode()

@@ -3,10 +3,10 @@
 import asyncio
 from mavsdk import System
 
-
+# Execution: python3 test_0822.py
 async def run():
     drone = System()
-    await drone.connect(system_address="udp://:14540")
+    await drone.connect(system_address="serial:///dev/ttyUSB0")
 
     print("Waiting for drone to connect...")
     async for state in drone.core.connection_state():
@@ -27,19 +27,22 @@ async def run():
 
     print("-- Arming")
     await drone.action.arm()
+    print('Absolute Altitude:', absolute_altitude)
 
     print("-- Taking off")
+    # await drone.action.set_takeoff_altitude(3)
+    # print (await drone.action.get_takeoff_altitude())
     await drone.action.takeoff()
 
     await asyncio.sleep(1)
-    flying_alt = absolute_altitude + 3.0 #To fly drone 3m above the ground plane
+    flying_alt = absolute_altitude + 2.5 #To fly drone 3m above the ground plane
     #goto_location() takes Absolute MSL altitude 
-    await drone.action.goto_location(37.012312, 126.34513, flying_alt, 0)
+    await drone.action.goto_location(37.4558187, 126.9519536, flying_alt, 0)
     
-    await asyncio.sleep(3)
+    # await asyncio.sleep(3)
 
-    print("-- Landing")
-    await drone.action.land()
+    # print("-- Landing")
+    # await drone.action.land()
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()

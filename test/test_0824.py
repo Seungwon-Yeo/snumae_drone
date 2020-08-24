@@ -58,33 +58,36 @@ async def run():
             print(f"Drone discovered with UUID: {state.uuid}")
             break
 
-    # print("Waiting for drone to have a global position estimate...")
-    # async for health in drone.telemetry.health():
-    #     if health.is_global_position_ok:
-    #         print("Global position estimate ok")
-    #         break
+    print("Waiting for drone to have a global position estimate...")
+    async for health in drone.telemetry.health():
+        if health.is_global_position_ok:
+            print("Global position estimate ok")
+            break
 
-    # print("Fetching amsl altitude at home location....")
-    # async for terrain_info in drone.telemetry.home():
-    #     absolute_altitude = terrain_info.absolute_altitude_m
-    #     break
+    print("Fetching amsl altitude at home location....")
+    async for terrain_info in drone.telemetry.home():
+        absolute_altitude = terrain_info.absolute_altitude_m
+        break
 
     print("-- Arming")
     await drone.action.arm()
 
-    # print('Absolute Altitude:', absolute_altitude)
+    print('Absolute Altitude:', absolute_altitude)
     
-    # print("-- Taking off")
-    # # await drone.action.set_takeoff_altitude(3)
-    # # print (await drone.action.get_takeoff_altitude())
-    # await drone.action.takeoff()
+    print("-- Taking off")
+    # await drone.action.set_takeoff_altitude(3)
+    # print (await drone.action.get_takeoff_altitude())
+    await drone.action.takeoff()
 
+    await asyncio.sleep(1)
+    flying_alt = absolute_altitude + 2.5 #To fly drone 3m above the ground plane
+    #goto_location() takes Absolute MSL altitude 
+
+    # await drone.action.goto_location(37.453989, 126.9517722, flying_alt, 0)
     # await asyncio.sleep(1)
-    # flying_alt = absolute_altitude + 2.5 #To fly drone 3m above the ground plane
-    # #goto_location() takes Absolute MSL altitude 
-    print(target_gps)
+    
     await drone.action.goto_location(target_gps.latitude, target_gps.longitude, flying_alt, 0)
-    # await asyncio.sleep(3)
+    await asyncio.sleep(1)
 
     # print("-- Landing")
     # await drone.action.land()
@@ -93,14 +96,14 @@ def main():
     rospy.init_node('SNU_drone', anonymous=True)
 
     cnt = Controller()
-    rospy.Subscriber('/mavros/state', State, cnt.state)
-    rospy.sleep(0.2)
-    
-    # rospy.Subscriber('/Target_GPS_msg', Target_GPS, cnt.GPS_callback)
+    # rospy.Subscriber('/mavros/state', State, cnt.state)
     # rospy.sleep(0.2)
+    
+    rospy.Subscriber('/Target_GPS_msg', Target_GPS, cnt.GPS_callback)
+    rospy.sleep(0.2)
 
 if __name__ == "__main__":
-    # main()
+    main()
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(run())

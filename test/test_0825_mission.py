@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-
 import asyncio
 
 from mavsdk import System
 from mavsdk.mission import (MissionItem, MissionPlan)
-
 
 # ROS python API
 import rospy
@@ -28,11 +26,9 @@ from GPS_topic.msg import Target_GPS
 target_gps = Target_GPS()
 
 # A Message for the current local position of the drone
-local_pos = Point(0.0, 0.0, 0.0)
 global_pos = Point(0.0, 0.0, 0.0)
 
 absolute_altitude = 0
-
 
 class Controller:
     # initialization method
@@ -46,7 +42,6 @@ class Controller:
         target_gps.longitude = msg.longitude
 
         print('GPS_callback called')
-
 
 async def run():
     drone = System()
@@ -75,8 +70,8 @@ async def run():
     mission_items = []
     #parameters = (latitude_deg, longitude_deg, relative_altitude_m, speed_m_s, is_flying_through
     #               gimbal_pitch, gimbal_yaw, camera_action, loiter_time_s, camera_photo_interval_s)
-    mission_items.append(MissionItem(47.398039859999997,
-                                     8.5455725400000002,
+    mission_items.append(MissionItem(37.xxxxx,
+                                     126.xxxxxx,
                                      1,
                                      2,
                                      True,
@@ -85,8 +80,8 @@ async def run():
                                      MissionItem.CameraAction.NONE,
                                      float('nan'),
                                      float('nan')))
-    mission_items.append(MissionItem(47.398036222362471,
-                                     8.5450146439425509,
+    mission_items.append(MissionItem(37.xxxxx,
+                                     126.xxxxxx,
                                      1,
                                      2,
                                      True,
